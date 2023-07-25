@@ -6,6 +6,7 @@
 *.zip
 *.tar.gz
 *.rar
+*.pem
 demodb
 target
 .classpath
