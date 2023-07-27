@@ -17,8 +17,8 @@ The project demonstrates how to create and use JWT to protect Spring-based Java 
 ## Implementation details
 
 ## Generate keys
-Before run the application you need to generate private and public RSA keys to generate/validate JWT tokens.
-You can do this using the `./src/main/resources/keys/keygen` utility or any other key generator.
+Before run the application you need to generate private and public RSA keys to manage JWT tokens.
+You can do this using the `./src/main/resources/keys/keygen` utility or any other key generator what you want.
 But, in any case, make sure length of private key cannot be less that 2048 bytes.
 
 ## Run the application
