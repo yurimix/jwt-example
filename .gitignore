@@ -1,0 +1,13 @@
+*.class
+*.log
+*.jar
+*.war
+*.nar
+*.zip
+*.tar.gz
+*.rar
+*.pem
+demodb
+target
+.classpath
+.project
