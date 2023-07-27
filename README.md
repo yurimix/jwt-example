@@ -14,7 +14,7 @@ The project demonstrates how to create and use JWT to protect Spring-based Java 
   * locked - locked user (`User account is locked` message)
 *  There are two roles: `ADMIN` and `USER`, an ordinary user has USER role, admin user has both roles.
 
-_Note: using `jjwt` here is just for fun, I would recommend OAUTH2 if you want to do production code_
+_**Note:** using `jjwt` here is just for a joke, I would recommend OAUTH2 if you want to do production code. But the choice is yours._
 
 ## Implementation details
 
@@ -24,7 +24,7 @@ You can do this using the `./src/main/resources/keys/keygen` utility or any othe
 But, in any case, make sure length of private key cannot be less that 2048 bytes.
 
 ## Run the application
-_Note: private and public kays must be generated before application run._
+_**Note:** private and public kays must be generated before application run._
 
 Run the application:
 ```
@@ -66,6 +66,6 @@ Hello ADMIN!
 ```
 This token is suitable to have access to `/hello/user` too.
 
-That's all.
+**That's all.**
 
-PS: Visit to https://jwt.io to view generated tokens data.
+**PS:** Visit to https://jwt.io to view generated tokens data.
