@@ -29,6 +29,11 @@ Run the application:
 mvn spring-boot:run
 
 ```
+Run application tests:
+```
+mvn test
+```
+
 ### Authentication token
 Get authentication token:
 ```
