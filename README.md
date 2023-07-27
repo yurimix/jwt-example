@@ -14,6 +14,8 @@ The project demonstrates how to create and use JWT to protect Spring-based Java 
   * locked - locked user (`User account is locked` message)
 *  There are two roles: `ADMIN` and `USER`, an ordinary user has USER role, admin user has both roles.
 
+_Note: using `jjwt` here is just for fun, I would recommend OAUTH2 if you want to do production code_
+
 ## Implementation details
 
 ## Generate keys
