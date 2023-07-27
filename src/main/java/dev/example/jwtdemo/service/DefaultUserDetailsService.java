@@ -20,6 +20,17 @@ public class DefaultUserDetailsService implements UserDetailsService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
+	enum PredefinedUsers {
+		ADMIN_USER   ("admin"),
+		EXPIRED_USER ("expired"),
+		LOCKED_USER  ("locked");
+
+		private final String userName;
+		private PredefinedUsers(String userName) {
+			this.userName = userName;
+		}
+	};
+
 	// TODO: Mock implementation: all users are valid when username == password
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -27,11 +38,15 @@ public class DefaultUserDetailsService implements UserDetailsService {
 		var ub = User.builder().
 			username(username).
 			password(password).
-			authorities(Arrays.asList(username.equals("admin") ? Role.ADMIN_AUTHORITY: Role.USER_AUTHORITY));
-		if (username.equals("expired")) {
+			authorities(
+				Arrays.asList(
+					username.equals(PredefinedUsers.ADMIN_USER.userName) ? 
+						Role.ADMIN_AUTHORITY: Role.USER_AUTHORITY)
+			);
+		if (username.equals(PredefinedUsers.EXPIRED_USER.userName)) {
 			ub.accountExpired(true);
 		}
-		if (username.equals("locked")) {
+		if (username.equals(PredefinedUsers.LOCKED_USER.userName)) {
 			ub.accountLocked(true);
 		}
 		return ub.build();

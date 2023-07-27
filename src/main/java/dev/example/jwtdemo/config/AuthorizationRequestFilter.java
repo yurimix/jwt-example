@@ -10,6 +10,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.oauth2.jwt.JwtValidationException;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -46,8 +47,10 @@ public class AuthorizationRequestFilter extends OncePerRequestFilter {
 				username = tokenComposer.getUsernameFromToken(jwtToken);
 			} catch (IllegalArgumentException e) {
 				logger.error("Unable to get username from token");
-			} catch (ExpiredJwtException e) {
-				logger.warn("JWT token has expired");
+			} catch ( ExpiredJwtException       // JWTS 
+					| JwtValidationException e	// OAUTH2
+			) {
+				logger.warn("JWT token has expired or not valid");
 			}
 		}
 
