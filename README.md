@@ -34,7 +34,10 @@ Run application tests:
 mvn test
 ```
 
-### Authentication token
+## Test the application
+### Test the application using CURL
+
+#### Authentication token
 Get authentication token:
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8080/authenticate --data '{"username":"test_user","password":"test_user"}'
@@ -43,7 +46,6 @@ Example of response body:
 ```
 {"token":"<base64-encoded-token-data>"}
 ```
-### Access to app
 #### Access to user's resource
 ```
 curl -X GET -H 'Authorization: Bearer <base64-encoded-token-data>' -i http://localhost:8080/hello/user
@@ -63,6 +65,10 @@ Using the new token the response will be
 Hello ADMIN!
 ```
 This token is suitable to have access to `/hello/user` too.
+
+### The the application using Swagger UI
+The app also includes Open API integration for REST API visualization: http://localhost:8080/swagger-ui/index.html   
+I think that there is no need to describe that UI, you can handle it yourself.
 
 **That's all.**
 
