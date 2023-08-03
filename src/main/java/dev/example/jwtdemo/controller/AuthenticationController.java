@@ -18,10 +18,14 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import dev.example.jwtdemo.jwt.JwtTokenComposer;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 record AuthenticationRequest(
+		@Schema(name = "username", example = "user", description = "User name")
 		@JsonProperty(required = true, value = "username") String username,
+		@Schema(name = "password", example = "user", description = "User password, for this demo must be equal to the user name")
 		@JsonProperty(required = true, value = "password") String password) {
+
 		@JsonCreator
 		public AuthenticationRequest(String username, String password) {
 			this.username = username;
