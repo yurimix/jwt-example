@@ -66,7 +66,7 @@ Hello ADMIN!
 ```
 This token is suitable to have access to `/hello/user` too.
 
-### The the application using Swagger UI
+### Test the application using Swagger UI
 The app also includes Open API integration for REST API visualization: http://localhost:8080/swagger-ui/index.html   
 I think that there is no need to describe that UI, you can handle it yourself.
 
